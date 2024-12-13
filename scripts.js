@@ -23,8 +23,6 @@ const imgs = [
 
 const img = "./brownie.jpg";
 
-// function createThumbnails(imgs) {}
-
 const imgslct = document.querySelector(".imgselect");
 const mainimg = document.querySelector(".background");
 
@@ -35,13 +33,37 @@ document.addEventListener("DOMContentLoaded", function () {
   if (mainimg) {
     mainimg.src = imgs[0].src;
     mainimg.alt = imgs[0].alt;
+    console.log(imgs[0]);
   }
 });
 
-// img1.addEventListener("click", button1);
+const imgcont = document.querySelector("#container");
 
-// function button1() {
-//   console.log("worked");
-//   mainimg.src = imgs[index + 1].src;
-//   mainimg.alt = imgs[index + 1].alt;
+function createThumbnails() {
+  for (let i = 0; i <= imgs.length; i++) {
+    console.log(imgs[i]);
+    const thumbImg = document.createElement("img");
+    thumbImg.width = 300;
+    thumbImg.height = 200;
+    thumbImg.src = imgs[1].src;
+    imgcont.appendChild(thumbImg);
+  }
+}
+
+// const galleryContainer = document.getElementById("container");
+
+// // Loop through the array and create gallery items
+// for (let i = 0; i < imgs.length; i++) {
+//   const galleryItem = document.createElement("div");
+//   galleryItem.classList.add("gallery-item");
+
+//   const imgElement = document.createElement("img");
+//   imgElement.src = imgs[i].src;
+//   imgElement.alt = imgs[i].src;
+
+//   // Append the image to the gallery item
+//   galleryItem.appendChild(imgElement);
+
+//   // Append the gallery item to the container
+//   galleryContainer.appendChild(galleryItem);
 // }
