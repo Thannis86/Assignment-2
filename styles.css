@@ -5,8 +5,8 @@ body {
   background-color: black;
 }
 
-.background {
-  grid-area: 2/2/5/5;
+.backgroundimg {
+  grid-area: 2 / 2/5/5;
 }
 
 .imgselect {
