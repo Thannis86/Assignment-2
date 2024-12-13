@@ -20,8 +20,8 @@ body {
 #container {
   grid-area: 2/3/3/4;
   background-color: red;
-  width: 500px;
-  height: 500px;
+  width: 100%px;
+  height: 100%px;
 }
 
 @media (min-width: 200px) {

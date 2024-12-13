@@ -43,12 +43,14 @@ function createThumbnails() {
   for (let i = 0; i <= imgs.length; i++) {
     console.log(imgs[i]);
     const thumbImg = document.createElement("img");
-    thumbImg.width = 300;
-    thumbImg.height = 200;
-    thumbImg.src = imgs[1].src;
+    thumbImg.width = 80;
+    thumbImg.height = 45;
+    thumbImg.src = imgs[i].src;
     imgcont.appendChild(thumbImg);
   }
 }
+
+createThumbnails(imgs);
 
 // const galleryContainer = document.getElementById("container");
 
