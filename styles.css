@@ -1,0 +1,53 @@
+body {
+  display: grid;
+  grid-template-columns: 2% 18% 60% 18% 2%;
+  grid-template-rows: 2% 68% 10% 18% 2%;
+  background-color: black;
+}
+
+.background {
+  grid-area: 2/2/5/5;
+}
+
+.imgselect {
+  grid-column: 3 / span 1;
+  grid-row: 3 / span 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 200px) {
+  .background {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 600px) {
+  .background {
+    width: 100%;
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 800px) {
+  .background {
+    width: 100%;
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .background {
+    width: 100%;
+    max-width: 1600px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .background {
+    width: 100%;
+    max-width: 1920px;
+  }
+}
