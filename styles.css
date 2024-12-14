@@ -1,20 +1,61 @@
 body {
   display: grid;
   grid-template-columns: 2% 18% 60% 18% 2%;
-  grid-template-rows: 2% 68% 10% 18% 2%;
+  grid-template-rows: 70% 10% 18% 2%;
   background-color: black;
 }
 
 .backgroundimg {
-  grid-area: 2 / 2/5/5;
+  grid-area: 1 / 2/4/5;
 }
 
 .imgselect {
   grid-column: 3 / span 1;
-  grid-row: 3 / span 1;
+  grid-row: 2 / span 1;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+
+#img1 {
+  width: 13.96%;
+  height: 86.59%;
+  background-image: url("./cookie.jpg");
+  background-size: 100%;
+  display: flex;
+}
+
+#img2 {
+  width: 13.96%;
+  height: 86.59%;
+  background-image: url("./brownie.jpg");
+  background-size: 100%;
+}
+
+#img3 {
+  width: 13.96%;
+  height: 86.59%;
+  background-image: url("./caramelmouse.jpg");
+  background-size: 100%;
+}
+
+#img4 {
+  width: 13.96%;
+  height: 86.59%;
+  background-image: url("./chocolatecake.jpg");
+  background-size: 100%;
+}
+
+#img5 {
+  width: 13.96%;
+  height: 86.59%;
+  background-image: url("./sugarcookie.jpg");
+  background-size: 100%;
+}
+
+#img1.hover {
+  border: solid white 10px;
+  background-image: url("./caramelmouse.jpg");
 }
 
 #container {
@@ -25,35 +66,35 @@ body {
 }
 
 @media (min-width: 200px) {
-  .background {
+  #background {
     width: 100%;
     max-width: 600px;
   }
 }
 
 @media (min-width: 600px) {
-  .background {
+  #background {
     width: 100%;
     max-width: 800px;
   }
 }
 
 @media (min-width: 800px) {
-  .background {
+  #background {
     width: 100%;
     max-width: 1200px;
   }
 }
 
 @media (min-width: 1200px) {
-  .background {
+  #background {
     width: 100%;
     max-width: 1600px;
   }
 }
 
 @media (min-width: 1600px) {
-  .background {
+  #background {
     width: 100%;
     max-width: 1920px;
   }
