@@ -30,6 +30,8 @@ const btn5 = document.querySelector("#img5");
 const imgslct = document.querySelector(".imgselect");
 const mainimg = document.querySelector("#background");
 
+let imgnmbr = 0;
+
 // https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb
 // Image src selector help
 
@@ -38,61 +40,71 @@ document.addEventListener("DOMContentLoaded", function () {
     mainimg.src = imgs[0].src;
     mainimg.alt = imgs[0].alt;
     console.log(imgs[0]);
-    btn1.style.display = "none";
+    btn1.style.opacity = "50%";
   }
 });
 
 btn1.addEventListener("click", () => {
-  btn1.style.display = "none";
-  btn2.style.display = "flex";
-  btn3.style.display = "flex";
-  btn4.style.display = "flex";
-  btn5.style.display = "flex";
   mainimg.src = imgs[0].src;
   mainimg.alt = imgs[0].alt;
+  btn1.style.opacity = "50%";
+  btn2.style.opacity = "100%";
+  btn3.style.opacity = "100%";
+  btn4.style.opacity = "100%";
+  btn5.style.opacity = "100%";
 });
 
 btn2.addEventListener("click", () => {
-  btn1.style.display = "flex";
-  btn2.style.display = "none";
-  btn3.style.display = "flex";
-  btn4.style.display = "flex";
-  btn5.style.display = "flex";
   mainimg.src = imgs[1].src;
   mainimg.alt = imgs[1].alt;
+  btn1.style.opacity = "100%";
+  btn2.style.opacity = "50%";
+  btn3.style.opacity = "100%";
+  btn4.style.opacity = "100%";
+  btn5.style.opacity = "100%";
 });
 
 btn3.addEventListener("click", () => {
-  btn1.style.display = "flex";
-  btn2.style.display = "flex";
-  btn3.style.display = "none";
-  btn4.style.display = "flex";
-  btn5.style.display = "flex";
   mainimg.src = imgs[2].src;
   mainimg.alt = imgs[2].alt;
+  btn1.style.opacity = "100%";
+  btn2.style.opacity = "100%";
+  btn3.style.opacity = "50%";
+  btn4.style.opacity = "100%";
+  btn5.style.opacity = "100%";
 });
 
 btn4.addEventListener("click", () => {
-  btn1.style.display = "flex";
-  btn2.style.display = "flex";
-  btn3.style.display = "flex";
-  btn4.style.display = "none";
-  btn5.style.display = "flex";
   mainimg.src = imgs[3].src;
   mainimg.alt = imgs[3].alt;
+  btn1.style.opacity = "100%";
+  btn2.style.opacity = "100%";
+  btn3.style.opacity = "100%";
+  btn4.style.opacity = "50%";
+  btn5.style.opacity = "100%";
 });
 
 btn5.addEventListener("click", () => {
-  btn1.style.display = "flex";
-  btn2.style.display = "flex";
-  btn3.style.display = "flex";
-  btn4.style.display = "flex";
-  btn5.style.display = "none";
   mainimg.src = imgs[4].src;
   mainimg.alt = imgs[4].alt;
+  btn1.style.opacity = "100%";
+  btn2.style.opacity = "100%";
+  btn3.style.opacity = "100%";
+  btn4.style.opacity = "100%";
+  btn5.style.opacity = "50%";
 });
 
 const imgcont = document.querySelector(".container");
+
+function handleArrowKeyPress(event) {
+  if (event.key === "ArrowRight") {
+    imgnmbr(+1);
+    console.log(imgnmbr);
+  } else if (event.key === "ArrowLeft") {
+    imgnmbr(-1);
+    console.log(imgnmbr);
+  }
+}
 
 // function createThumbnails() {
 //   for (let i = 0; i <= imgs.length; i++) {
