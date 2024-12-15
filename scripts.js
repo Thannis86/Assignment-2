@@ -43,6 +43,41 @@ function reset() {
   btn5.style.opacity = "100%";
 }
 
+function btn01() {
+  mainimg.src = imgs[0].src;
+  mainimg.alt = imgs[0].alt;
+  reset();
+  btn1.style.opacity = "50%";
+}
+
+function btn02() {
+  mainimg.src = imgs[1].src;
+  mainimg.alt = imgs[1].alt;
+  reset();
+  btn2.style.opacity = "50%";
+}
+
+function btn03() {
+  mainimg.src = imgs[2].src;
+  mainimg.alt = imgs[2].alt;
+  reset();
+  btn3.style.opacity = "50%";
+}
+
+function btn04() {
+  mainimg.src = imgs[3].src;
+  mainimg.alt = imgs[3].alt;
+  reset();
+  btn4.style.opacity = "50%";
+}
+
+function btn05() {
+  mainimg.src = imgs[4].src;
+  mainimg.alt = imgs[4].alt;
+  reset();
+  btn5.style.opacity = "50%";
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   if (mainimg) {
     mainimg.src = imgs[0].src;
@@ -53,45 +88,44 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 btn1.addEventListener("click", () => {
-  mainimg.src = imgs[0].src;
-  mainimg.alt = imgs[0].alt;
-
-  btn1.style.opacity = "50%";
+  btn01();
   imgnmbr = 1;
 });
 
 btn2.addEventListener("click", () => {
-  mainimg.src = imgs[1].src;
-  mainimg.alt = imgs[1].alt;
-  reset();
-  btn2.style.opacity = "50%";
+  btn02();
   imgnmbr = 2;
 });
 
 btn3.addEventListener("click", () => {
-  mainimg.src = imgs[2].src;
-  mainimg.alt = imgs[2].alt;
-  reset();
-  btn3.style.opacity = "50%";
+  btn03();
   imgnmbr = 3;
 });
 
 btn4.addEventListener("click", () => {
-  mainimg.src = imgs[3].src;
-  mainimg.alt = imgs[3].alt;
-  reset();
-  btn4.style.opacity = "50%";
+  btn04();
   imgnmbr = 4;
 });
 
 btn5.addEventListener("click", () => {
-  mainimg.src = imgs[4].src;
-  mainimg.alt = imgs[4].alt;
-  reset();
-  btn5.style.opacity = "50%";
+  btn05();
   imgnmbr = 5;
   console.log(imgnmbr);
 });
+
+function btn(number) {
+  if (number == 1) {
+    btn01();
+  } else if (number == 2) {
+    btn02();
+  } else if (number == 3) {
+    btn03();
+  } else if (number == 4) {
+    btn04();
+  } else if (number == 5) {
+    btn05();
+  }
+}
 
 const left = document.querySelector("#left");
 const right = document.querySelector("#right");
@@ -103,8 +137,7 @@ right.addEventListener("click", () => {
     imgnmbr = 1;
   }
   console.log(imgnmbr);
-  mainimg.src = imgs[imgnmbr - 1].src;
-  mainimg.alt = imgs[imgnmbr - 1].alt;
+  btn(imgnmbr);
 });
 
 left.addEventListener("click", () => {
@@ -114,8 +147,7 @@ left.addEventListener("click", () => {
     imgnmbr = 5;
   }
   console.log(imgnmbr);
-  mainimg.src = imgs[imgnmbr - 1].src;
-  mainimg.alt = imgs[imgnmbr - 1].alt;
+  btn(imgnmbr);
 });
 
 // function createThumbnails() {
