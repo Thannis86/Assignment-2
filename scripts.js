@@ -30,10 +30,18 @@ const btn5 = document.querySelector("#img5");
 const imgslct = document.querySelector(".imgselect");
 const mainimg = document.querySelector("#background");
 
-let imgnmbr = 0;
+let imgnmbr = 1;
 
 // https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb
 // Image src selector help
+
+function reset() {
+  btn1.style.opacity = "100%";
+  btn2.style.opacity = "100%";
+  btn3.style.opacity = "100%";
+  btn4.style.opacity = "100%";
+  btn5.style.opacity = "100%";
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   if (mainimg) {
@@ -47,64 +55,68 @@ document.addEventListener("DOMContentLoaded", function () {
 btn1.addEventListener("click", () => {
   mainimg.src = imgs[0].src;
   mainimg.alt = imgs[0].alt;
+
   btn1.style.opacity = "50%";
-  btn2.style.opacity = "100%";
-  btn3.style.opacity = "100%";
-  btn4.style.opacity = "100%";
-  btn5.style.opacity = "100%";
+  imgnmbr = 1;
 });
 
 btn2.addEventListener("click", () => {
   mainimg.src = imgs[1].src;
   mainimg.alt = imgs[1].alt;
-  btn1.style.opacity = "100%";
+  reset();
   btn2.style.opacity = "50%";
-  btn3.style.opacity = "100%";
-  btn4.style.opacity = "100%";
-  btn5.style.opacity = "100%";
+  imgnmbr = 2;
 });
 
 btn3.addEventListener("click", () => {
   mainimg.src = imgs[2].src;
   mainimg.alt = imgs[2].alt;
-  btn1.style.opacity = "100%";
-  btn2.style.opacity = "100%";
+  reset();
   btn3.style.opacity = "50%";
-  btn4.style.opacity = "100%";
-  btn5.style.opacity = "100%";
+  imgnmbr = 3;
 });
 
 btn4.addEventListener("click", () => {
   mainimg.src = imgs[3].src;
   mainimg.alt = imgs[3].alt;
-  btn1.style.opacity = "100%";
-  btn2.style.opacity = "100%";
-  btn3.style.opacity = "100%";
+  reset();
   btn4.style.opacity = "50%";
-  btn5.style.opacity = "100%";
+  imgnmbr = 4;
 });
 
 btn5.addEventListener("click", () => {
   mainimg.src = imgs[4].src;
   mainimg.alt = imgs[4].alt;
-  btn1.style.opacity = "100%";
-  btn2.style.opacity = "100%";
-  btn3.style.opacity = "100%";
-  btn4.style.opacity = "100%";
+  reset();
   btn5.style.opacity = "50%";
+  imgnmbr = 5;
+  console.log(imgnmbr);
 });
 
-const imgcont = document.querySelector(".container");
+const left = document.querySelector("#left");
+const right = document.querySelector("#right");
 
-function handleArrowKeyPress(event) {
-  if (event.key === "ArrowRight") {
-    imgnmbr(+1);
-    console.log(imgnmbr);
-  } else if (event.key === "ArrowLeft") {
-    imgnmbr(-1);
-    console.log(imgnmbr);
+right.addEventListener("click", () => {
+  if (imgnmbr < 5) {
+    imgnmbr++;
+  } else if ((imgnmbr = 5)) {
+    imgnmbr = 1;
   }
-}
+  console.log(imgnmbr);
+  mainimg.src = imgs[imgnmbr - 1].src;
+  mainimg.alt = imgs[imgnmbr - 1].alt;
+});
+
+left.addEventListener("click", () => {
+  if (imgnmbr > 1) {
+    imgnmbr--;
+  } else if ((imgnmbr = 1)) {
+    imgnmbr = 5;
+  }
+  console.log(imgnmbr);
+  mainimg.src = imgs[imgnmbr - 1].src;
+  mainimg.alt = imgs[imgnmbr - 1].alt;
+});
 
 // function createThumbnails() {
 //   for (let i = 0; i <= imgs.length; i++) {
