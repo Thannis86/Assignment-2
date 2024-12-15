@@ -130,7 +130,7 @@ function btn(number) {
 const left = document.querySelector("#left");
 const right = document.querySelector("#right");
 
-right.addEventListener("click", () => {
+function rightbtn() {
   if (imgnmbr < 5) {
     imgnmbr++;
   } else if ((imgnmbr = 5)) {
@@ -138,9 +138,13 @@ right.addEventListener("click", () => {
   }
   console.log(imgnmbr);
   btn(imgnmbr);
+}
+
+right.addEventListener("click", () => {
+  rightbtn();
 });
 
-left.addEventListener("click", () => {
+function leftbtn() {
   if (imgnmbr > 1) {
     imgnmbr--;
   } else if ((imgnmbr = 1)) {
@@ -148,45 +152,18 @@ left.addEventListener("click", () => {
   }
   console.log(imgnmbr);
   btn(imgnmbr);
+}
+
+left.addEventListener("click", () => {
+  leftbtn();
 });
 
-// function createThumbnails() {
-//   for (let i = 0; i <= imgs.length; i++) {
-//     console.log(imgs[i]);
-//     const thumbImg = document.createElement("img");
-//     thumbImg.width = 80;
-//     thumbImg.height = 45;
-//     thumbImg.src = imgs[i].src;
-//     thumbImg.alt = imgs[i].alt;
-//     imgslct.appendChild(thumbImg);
-//   }
-// }
+window.addEventListener("keydown", keys);
 
-//     // if (!Array[i]) {
-//     //   continue;
-// createThumbnails(imgs);
-
-// function createLargeImagesHandler() {
-//   mainimg.innerHTML = null;
-//   const bigImg = document.createElement("img");
-//   bigImg.height = 500;
-//   bigImg.width = 500;
-//   bigImg.src = imgs[2].src;
-//   bigImg.alt = imgs[2].alt;
-//   mainimg.append(bigImg);
-// }
-
-// const testbtn = document.querySelector("#test");
-
-// testbtn.addEventListener("click", () => {
-//   console.log("This worked");
-// });
-
-// // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
-// // Splice support
-
-// function remove() {
-//   // imgs.splice(2, 1);
-//   // imgcont.textContent = "It worked";
-//   console.log("The button worked");
-// }
+function keys(event) {
+  if ((event.key = "ArrowRight")) {
+    leftbtn();
+  } else if ((event.key = "ArrowLeft")) {
+    rightbtn();
+  }
+}

@@ -1,2 +1,5 @@
 # Assignment-2
-Second assignment. Gallery
+
+I found this assignment trickier than the previous one. I felt that there was an expectation to use loops and arrays for the image gallery, but we hadn't yet been taught how to properly integrate functions with loops for this particular case. I tried a few tutorials, but couldn't figure out how to get the functions to properly intereact with the loop created thumbnails. In the end I gave up and brute forced by way using actual buttons. Then I got stuck on how to add left/right arrows onto the page. At this point I seperated a lot of the functions from the event listeners, then came up with an idea to create a variable and have basically everything run off that variable instead. I then went through the code on the example website and figure out how to add the arrow key event listeners and integrate my messy javascrip into it.
+
+My biggest struggle throughout this was figuring out the 'proper' way to add the javascript, but couldn't and ended up brute forcing my way through, doubling the lines from the example. At one point I even tried copying the full code and adjusting it, but couldn't get it right. In the end, I went with what I felt comfortable with and even though it's messy, I'm happy with the result.
