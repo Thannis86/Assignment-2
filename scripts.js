@@ -161,9 +161,11 @@ left.addEventListener("click", () => {
 window.addEventListener("keydown", keys);
 
 function keys(event) {
-  if ((event.key = "ArrowRight")) {
-    leftbtn();
-  } else if ((event.key = "ArrowLeft")) {
+  if (event.key === "ArrowRight") {
     rightbtn();
+    console.log("Right button pressed");
+  } else if (event.key === "ArrowLeft") {
+    leftbtn();
+    console.log("Left button pressed");
   }
 }
